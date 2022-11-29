@@ -2,10 +2,11 @@
     overflow: scroll;
     height: 400px;
     margin-top: 20px;
-    color: #615d5d;
+    margin-bottom: 20px;
+    color: #fffff2;
 }
 .table tr:nth-of-type(odd) {
-    background-color: #f3f2f8;
+    background: rgba( 255, 255, 255, 0.2 )
 }
 .table tr {
     display:flex;

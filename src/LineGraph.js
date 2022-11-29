@@ -72,13 +72,12 @@ function LineGraph({casesType}) {
 
 
   return (
-    <div class="lineGraph" style={{width: "99%"}}>
+    <div className="lineGraph" style={{width: "99%"}}>
     {data?.length > 0 && (
       <Line data={{
           datasets: [
             {
               data: data,
-              backgroundColor: casesTypeColor[casesType].half_op,
               borderColor: casesTypeColor[casesType].hex,
               fill: true
             }

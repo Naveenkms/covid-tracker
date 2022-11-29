@@ -1,14 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import "./App.css";
-import { MenuItem, FormControl, Select, Card, CardContent} from '@mui/material';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { MenuItem, Button, FormControl, Select, Card, CardContent} from '@mui/material';
 import InfoBox from "./InfoBox"
 import LineGraph from './LineGraph';
 import Map from "./Map"
 import Table from "./Table"
-import { prettyPrintStat} from "./util"
+import { prettyPrintStat} from "./util";
 
 
 
+const theme = createTheme({
+  palette: {
+    glass: {
+      main: '#ffffff2e',
+      contrastText: '#1976d2',
+    },
+  },
+});
 
 function App() {
 
@@ -19,7 +28,7 @@ function App() {
   const [mapCenter, setMapCenter] = useState([34.80746, -40.4796]);
   const [mapZoom, setMapZoom] = useState(3);
   const [mapCountries, setMapCountries] = useState([]);
-  const [casesType, setCasesType] = useState("cases")
+  const [casesType, setCasesType] = useState("cases");
   
   useEffect(() => { 
     fetch('https://disease.sh/v3/covid-19/all')
@@ -73,6 +82,7 @@ function App() {
       <div className="app__left">
         <div className="app__header">
           <h1>COVID-19 TRACKER</h1>
+       
           <FormControl className="app__dropdown">
             <Select 
             variant="outlined"
